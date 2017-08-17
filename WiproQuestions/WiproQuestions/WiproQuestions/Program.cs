@@ -37,7 +37,7 @@ namespace WiproQuestions
             Console.WriteLine("--------------");
             int input = 582109;
             int result = SumOfSumsOfDigits(input);
-            Console.WriteLine($"Sum Of Sums Of Digits : {result}");
+            Console.WriteLine("Sum Of Sums Of Digits : {0}", result);
             Console.WriteLine("--------------");
             Console.WriteLine();
             Console.WriteLine();
@@ -48,7 +48,7 @@ namespace WiproQuestions
             Console.WriteLine("----------");
             string word = "mAlaYalAm";
             int palindromeValue = IsPalindrome(word);
-            Console.WriteLine($"Palindrome Value: {palindromeValue}");
+            Console.WriteLine("Palindrome Value: {0}", palindromeValue);
             Console.WriteLine("----------");
             Console.WriteLine();
             Console.WriteLine();
@@ -147,15 +147,15 @@ namespace WiproQuestions
 
             for (int i = 0; i < input2; i++)
             {
-                Console.WriteLine($"Original : {input1[i]}, Encoded : {encodedArray[i]}");
+                Console.WriteLine("Original : {0}, Encoded : {1}", input1[i], encodedArray[i]);
             }
 
             Result result = new Result();
             result.output1 = input1[0];
             result.output2 = SumOriginalArray(input1);
 
-            Console.WriteLine($"Frist Number: {result.output1}");
-            Console.WriteLine($"Sum : {result.output2}");
+            Console.WriteLine("Frist Number: {0}", result.output1);
+            Console.WriteLine("Sum : {0}", result.output2);
 
             return result;
         }
