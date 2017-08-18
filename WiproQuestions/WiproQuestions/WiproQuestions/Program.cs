@@ -8,6 +8,8 @@ namespace WiproQuestions
 {
     class Program
     {
+        public static bool IsNagativeNumber { get; set; }
+
         static void Main(string[] args)
         {
             #region EncodedArray
@@ -54,7 +56,41 @@ namespace WiproQuestions
             Console.WriteLine();
             #endregion
 
+            #region DigitSum
+            Console.WriteLine("Digit Sum");
+            Console.WriteLine("----------");
+            int number = -321;
+            int digitSum = DigitSum(number);
+            Console.WriteLine(digitSum);
+            Console.WriteLine("-----------");
+            Console.WriteLine();
+            Console.WriteLine();
+            #endregion
+
             Console.ReadLine();
+        }
+
+        private static int DigitSum(int number)
+        {
+            if(!IsNagativeNumber)
+            {
+                IsNagativeNumber = number < 0;
+            }
+
+            int index = number < 0 ? 1 : 0;
+            var numberCharArray = number.ToString().ToCharArray();
+            int sum = 0;
+            for (int i = index; i < numberCharArray.Length; i++)
+            {
+                sum = sum + Convert.ToInt32(numberCharArray[i].ToString());
+            }
+
+            if(IsNagativeNumber)
+            {
+                return sum <= 9 ? (-1*sum) : DigitSum(sum);
+            }
+
+            return sum <= 9 ? sum : DigitSum(sum);
         }
 
         private static int IsPalindrome(string word)
